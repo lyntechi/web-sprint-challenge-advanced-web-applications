@@ -9,7 +9,14 @@ body,
   margin: 0;
   padding: 0;
 }
-
+body {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgb(50, 138, 189) 0%,
+    rgb(52, 255, 228) 100%
+  );
+}
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;

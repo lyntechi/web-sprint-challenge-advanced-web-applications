@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import {axiosWithAuth} from "./axiosWithAuth";
-import { Link } from "react-router-dom";
+import { axiosWithAuth } from "./axiosWithAuth";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({

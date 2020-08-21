@@ -1,9 +1,9 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import BubblePage from "./BubblePage";
-import { axiosWithAuth as mocksAxios } from "./axiosWithAuth";
+import { fetchApi as mockFetch } from "./fetchApi";
 
-jest.mock("./axiosWithAuth");
+jest.mock("./fetchApi");
 const testData = {
   data: [
     {
@@ -25,7 +25,7 @@ const testData = {
 
 test("Fetches data and renders the bubbles", () => {
   // Finish this test
-  mocksAxios.mockResolvedValueOnce(testData);
+  mockFetch.mockResolvedValueOnce(testData);
   const { debug } = render(<BubblePage />);
   debug();
 });

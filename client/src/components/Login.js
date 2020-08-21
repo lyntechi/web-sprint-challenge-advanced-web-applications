@@ -45,7 +45,7 @@ const Login = (props) => {
           value={credentials.password}
           onChange={inputHandler}
         />
-        <button>Login</button>
+        <button className="login-button">Login</button>
       </form>
     </div>
   );

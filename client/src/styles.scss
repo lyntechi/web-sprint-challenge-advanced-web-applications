@@ -14,9 +14,26 @@ body,
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
+  flex-direction: column;
+  
 
   svg {
     height: 100%;
+  }
+  p{
+    margin: 1rem;
+   
+  }
+  input{
+    margin: 0 auto;
+    padding: 0.4rem;
+    width: 20%;
+  }
+  button{
+    padding: 0.4rem;
+    width: 10%;
+    margin: 2rem auto;
+    
   }
 }
 
@@ -25,7 +42,7 @@ body,
 }
 
 .bubble-wrap {
-  margin: 0 auto;
+  margin: -50rem auto;
   display: flex;
   flex-direction: column;
 }

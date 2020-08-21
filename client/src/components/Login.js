@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axiosWithAuth from "./axiosWithAuth";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({
@@ -19,16 +20,16 @@ const Login = (props) => {
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
         props.history.push("/BubblePage");
+        console.log(res);
       })
       .catch((err) =>
         console.log("error happend wih the post request to API", err)
       );
   };
   return (
-    <>
-      <h1>Welcome to the Bubble App!</h1>
-
+    <div className="login">
       <form onSubmit={login}>
+        <p>Username:</p>
         <input
           type="text"
           placeholder="Username"
@@ -36,6 +37,7 @@ const Login = (props) => {
           value={credentials.username}
           onChange={inputHandler}
         />
+        <p>Password:</p>
         <input
           type="password"
           placeholder="Password"
@@ -45,7 +47,7 @@ const Login = (props) => {
         />
         <button>Login</button>
       </form>
-    </>
+    </div>
   );
 };
 

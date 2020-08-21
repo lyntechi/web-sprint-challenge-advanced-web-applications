@@ -7,11 +7,7 @@ export function PrivateRoute(props) {
     <Route
       {...rest}
       render={() => {
-        return localStorage.getItem("token") ? (
-          children
-        ) : (
-          <Redirect to="/" />
-        );
+        return localStorage.getItem("token") ? children : <Redirect to="/" />;
       }}
     />
   );

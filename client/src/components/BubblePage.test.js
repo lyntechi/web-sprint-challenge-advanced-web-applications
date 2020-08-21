@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import BubblePage from "./BubblePage";
 import { fetchApi as mockFetch } from "./fetchApi";
 
@@ -23,9 +23,13 @@ const testData = {
   ],
 };
 
-test("Fetches data and renders the bubbles", () => {
+test("Fetches data and renders the bubbles", async () => {
   // Finish this test
   mockFetch.mockResolvedValueOnce(testData);
-  const { debug } = render(<BubblePage />);
-  debug();
+  const { debug, getByText } = render(<BubblePage />);
+  await waitFor(() => {
+    debug();
+    expect(getByText(/aliceblue/i)).toBeInTheDocument()
+  })
+  
 });

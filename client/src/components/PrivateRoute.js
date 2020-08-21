@@ -10,7 +10,7 @@ export function PrivateRoute(props) {
         return localStorage.getItem("token") ? (
           children
         ) : (
-          <Redirect to="/login" />
+          <Redirect to="/" />
         );
       }}
     />
